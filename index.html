@@ -15,15 +15,16 @@
       scroll-behavior: smooth;
     }
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: black;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 15px;
-      z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  z-index: 999;
     }
     nav a {
       color: white;
@@ -31,9 +32,10 @@
       font-weight: bold;
       font-size: 18px;
     }
-   section {
+  section {
   min-height: 100vh;
-  padding: 80px 20px 20px 20px;
+  width: 100%;
+  padding: 100px 20px 40px 20px;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -84,10 +86,11 @@
       margin: 10px;
     }
     .contact {
-      background-color: black;
-      color: white;
-      font-family: 'Cursive', Italic;
-    }
+  background-color: black;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+     }
+
     .about img {
       margin-top: 20px;
       width: 200px;
@@ -147,7 +150,7 @@
 
     // Insert contact info via JavaScript
     document.getElementById("email").innerText = "Email: yusufibrahim123333@gmail.com";
-    document.getElementById("telegram").innerHTML = 'Telegram: <a href="https://t.me/taecyeon24" target="_blank" style="color:lightblue">t.me/booless22</a>';
+    document.getElementById("telegram").innerHTML = 'Telegram: <a href="https://t.me/taecyeon24" target="_blank" style="color:lightblue">t.me/taecyeon24</a>';
   </script>
 </body>
 </html>
