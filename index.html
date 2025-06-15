@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibrahim Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: black;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px;
+      z-index: 999;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+   section {
+  min-height: 100vh;
+  padding: 80px 20px 20px 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+    }
+    section.active {
+      display: flex;
+    }
+    .home {
+      background: linear-gradient(to right, #808080, #a9a9a9);
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .slide-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideIn 2s forwards;
+    }
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about {
+      background-color: lightblue;
+      position: relative;
+      color: black;
+    }
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, #ffffff88, transparent);
+      pointer-events: none;
+      animation: sparkle 2s infinite alternate;
+    }
+    @keyframes sparkle {
+      from {opacity: 0.6;}
+      to {opacity: 1;}
+    }
+    .projects {
+      background-color: grey;
+      color: white;
+    }
+    .projects img {
+      max-width: 400px;
+      margin: 10px;
+    }
+    .contact {
+      background-color: black;
+      color: white;
+      font-family: 'Cursive', Italic;
+    }
+    .about img {
+      margin-top: 20px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home" onclick="showSection('home')">HOME</a>
+    <a href="#about" onclick="showSection('about')">ABOUT</a>
+    <a href="#projects" onclick="showSection('projects')">PROJECTS</a>
+    <a href="#contact" onclick="showSection('contact')">CONTACT</a>
+  </nav>
+
+  <section id="home" class="home active">
+    <h1>Hi, I'm Ibrahim</h1>
+    <p class="slide-in">A very passionate web developer as well as a data analyst.</p>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm skilled in using various analytical tools to analyse data, packages like:</p>
+    <ul>
+      <li>R</li>
+      <li>SPSS</li>
+      <li>PYTHON</li>
+    </ul>
+    <p>And I am also a web developer even though I'm not yet an expert, I love building simple websites.</p>
+    <img src="python_code.jpg" alt="Python Code">
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <h3>Time Series Regression</h3>
+    <p>Time series plot which deals with trend values over time to estimate the relationship between variables. I worked on time series plot between the exchange rate volatility and Nigeria Trade balance.</p>
+    <img src="timeseries.jpg" alt="Time Series Plot">
+
+    <h3>Bayesian Regression Analysis</h3>
+    <p>Bayesian regression analysis between the exchange rate volatility and Nigeria Trade balance to detect the extent of effect of the time series variables.</p>
+    <img src="bayesian.jpg" alt="Bayesian Regression">
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>For more enquiries, you can contact me:</p>
+    <p id="email"></p>
+    <p id="telegram"></p>
+  </section>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    // Insert contact info via JavaScript
+    document.getElementById("email").innerText = "Email: yusufibrahim123333@gmail.com";
+    document.getElementById("telegram").innerHTML = 'Telegram: <a href="https://t.me/taecyeon24" target="_blank" style="color:lightblue">t.me/booless22</a>';
+  </script>
+</body>
+</html>
